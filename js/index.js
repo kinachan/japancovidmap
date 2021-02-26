@@ -22,15 +22,43 @@ class CoronaMap {
       .catch(reject => console.log(reject));
   }
 
+  validateRender = (ev) => {
+    const float = parseFloat(ev.target.value);
+    const isSuccess = (
+      float >= 5 && float <= 30
+    ) && !Number.isNaN(float);
+    
+    const danger = document.getElementById('graphLength-danger');
+    const success = document.getElementById('graphLength-success');    
+    
+    if (!isSuccess) {
+      ev.target.classList.remove('is-primary');
+      ev.target.classList.add('is-danger');
+
+      if(!danger.classList.contains('show')) {
+        danger.classList.add('show');
+      }
+      return 0;
+    }
+    ev.target.classList.add('is-primary');
+    ev.target.classList.remove('is-danger');
+
+    danger.classList.remove('show');
+    success.classList.add('show');
+    setTimeout(() => success.classList.remove('show'), 2000);
+
+    return float;
+  }
+
   onGraphSelect = (ev) => {
     const value = ev.target.value;
     this.SvgReader.updateYKey(value);
   }
 
   onGraphLengthChange = (ev) => {
-    const float = parseFloat(ev.target.value);
-    if (!Number.isNaN(float)) {
-      this.SvgReader.updateLength(float);
+    const result = this.validateRender(ev);
+    if (result !== 0) {
+      this.SvgReader.updateLength(result);
     }
   }
 

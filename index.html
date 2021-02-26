@@ -20,8 +20,9 @@
       <span class="title">Now Loading</span>
     </div>
     <section class="section">
-      <h1 class="title">コロナグラフ</h1>
-      <h2 class="subtitle">stopcovid.jsonのデータから、コロナの感染状況を表しています。</h2>
+      <p class="is-size-1-desktop">Covid-19 Graph</p>
+      <p class="is-size-6-desktop">stopcovid.jsonのデータから、コロナの感染状況を表しています。</p>
+      <p class="is-size-6-desktop">地図をクリックするとグラフが表示されます。</p>
     </section>
 
     <div class="columns">
@@ -6749,6 +6750,8 @@
                   type="number" placeholder="5-30の値を入力" min="5" max="30"
                   step="1" value="5"
                   >
+                  <p id="graphLength-danger" for="graphLength" class="input-help help is-danger">5~30の数字を入力してください。</p>
+                  <p id="graphLength-success" for="graphLength" class="input-help help is-success">正しい値です。</p>
               </div>
           </div>
           </div>

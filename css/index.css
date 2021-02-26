@@ -39,3 +39,16 @@ body {
   padding: 16px;
   z-index: 500;
 }
+
+.input-help {
+  display: none;
+}
+
+.help {
+  font-size: .75rem;
+  margin-top: .25rem;
+}
+
+.show {
+  display: block;
+}
