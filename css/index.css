@@ -1,0 +1,41 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background-color: #009688;
+  color: #fff;
+}
+
+.container-custom {
+  min-width: 100vh;
+}
+
+.is-hover {
+  background-color: #ff0090;
+}
+
+.border-card {
+  border-radius: .25rem;
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+  overflow-x: hidden;
+}
+
+#graph-wrapper {
+  min-width: 640px;
+  min-height: 70vh;
+}
+
+.tooltip-info {
+  background-color: #fff;
+  border-radius: .25rem;
+  box-shadow: 0 0.5em 1em -0.125em rgb(10 10 10 / 10%), 0 0 0 1px rgb(10 10 10 / 2%);
+  color: #4a4a4a;
+  max-width: 100%;
+  position: absolute;
+  visibility: hidden;
+  font-size: 16px;
+  padding: 16px;
+  z-index: 500;
+}
