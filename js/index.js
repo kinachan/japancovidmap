@@ -19,7 +19,10 @@ class CoronaMap {
   getData = async () => {
     return await fetch('https://www.stopcovid19.jp/data/covid19japan.json')
       .then(resolve => resolve.json())
-      .catch(reject => console.log(reject));
+      .catch(reject => {
+        return fetch('./covid19japan.json')
+          .then(resolve => resolve.json())
+      }).catch(reject => console.log(reject));
   }
 
   validateRender = (ev) => {
